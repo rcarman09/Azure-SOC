@@ -1,26 +1,18 @@
 # Building a SOC + Honeynet in Azure (Live Traffic)
-![Cloud Honeynet / SOC](https://imgur.com/qqEFmdX.jpg)
+![Cloud Honeynet / SOC](https://imgur.com/FIIRA2X.jpg)
 
 ## Azure Topology
 ![Azure Topology](https://imgur.com/U7G84ng.jpg)
 
 ## Introduction
 
-In this project, I deployed a mini honeynet in Azure to collect and analyze log data from various resources. These logs were sent to a Log Analytics workspace, where Microsoft Sentinel was utilized to generate attack maps, issue alerts, and track incidents. To evaluate the effectiveness of security measures, I first measured key metrics in the unsecured environment over a 24-hour period. After implementing security hardening measures, I repeated the monitoring for another 24 hours to observe the impact. The metrics analyzed in this project include:
+In this project, I designed a honeynet by deploying Virtual Machines and an SQL Database within Microsoft Azure to collect and analyze log data from various resources. The network security groups were left wide open to internet traffic in order to generate logs. These logs were sent to a Log Analytics workspace, where Microsoft Sentinel was utilized to generate attack maps, issue alerts, and track incidents. To evaluate the effectiveness of security measures, I first measured key metrics in the unsecured environment over a 24-hour period. After implementing security hardening measures, I repeated the monitoring for another 24 hours to observe the impact. The metrics analyzed in this project include:
 
 - SecurityEvent: Windows Event Logs
 - Syslog: Linux Event Logs
 - SecurityAlert: Alerts triggered by Log Analytics
 - SecurityIncident: Sentinel-generated incidents
 - AzureNetworkAnalytics_CL: Malicious network traffic permitted into the honeynet
-
-The results below highlight the findings and improvements achieved through security hardening.
-
-## Architecture Before Hardening / Security Controls
-![Architecture Diagram](https://imgur.com/cpEvB9W.jpg)
-
-## Architecture After Hardening / Security Controls
-![Architecture Diagram](https://i.imgur.com/YQNa9Pp.jpg)
 
 The mini honeynet architecture deployed in Azure is comprised of the following key components:
 
